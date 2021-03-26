@@ -1,19 +1,11 @@
 use v5.32;
 use lib "$ENV{HOME}/var/git/OpenData-MeaningOfName/lib";
-use Data::Dumper qw();
+# use Data::Dumper qw();
 use OpenData::MeaningOfName;
 
-my $meaningofname = OpenData::MeaningOfName -> new('yusif');
-my @methods = qw(
-  status
-  status_message
-  name
-  meaning
-  gender
-);
+my $meaningofname = OpenData::MeaningOfName -> new($ARGV[0]);
 
-say $meaningofname -> $_() for @methods;;
-# die Data::Dumper::Dumper $meaningofname;
+say $meaningofname -> meaning();
 
 =pod
 
